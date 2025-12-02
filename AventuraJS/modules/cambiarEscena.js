@@ -1,3 +1,4 @@
+import { cargarTarjetaJugador } from "./cargarTarjetaJugador.js";
 import { actualizarStats } from "./actualizarStats.js";
 import { cargarEnemigos } from "./cargarEnemigos.js";
 import { iniciarCombate, siguienteCombate } from "./cargarCombates.js";
@@ -25,42 +26,34 @@ export function cambiarEscena(idEscenaActual, idEscenaSiguiente) {
 
 for (const e of escenas) {
     const boton = document.getElementById(e.boton);
+    cargarTarjetaJugador();
 
     if (boton) {
         boton.addEventListener("click", () => {
-            // Escena 1
-            if (e.siguiente === "escena1") {
-                mostrarTarjetaJugador();
-            }
-
-            // Escena 2 a 3
-            if (e.actual === "escena2") {
-                actualizarStats();
-            }
-
-            // Escena 3 a 4
-            if (e.actual === "escena3") {
-                cargarEnemigos();
-            }
-
-            // Escena 4 a 5 (primer combate)
-            if (e.actual === "escena4" && e.siguiente === "escena5") {
-                cambiarEscena(e.actual, e.siguiente); // primero mostrar la escena
-
-                iniciarCombate(); // luego iniciar combate
-            }
-
-            // Escena 5 a 6
-            if (e.actual === "escena5" && e.siguiente === "escena6") {
-                requestAnimationFrame(() => {
-                    mostrarResultadosFinales();
-                });
-            }
-
+            // Mostrar la escena
             cambiarEscena(e.actual, e.siguiente);
+
+            // Inicialización de escenas
+            switch (e.siguiente) {
+                case "escena3":
+                    actualizarStats();
+                    break;
+                case "escena4":
+                    cargarEnemigos();
+                    break;
+                case "escena5":
+                    iniciarCombate();
+                    break;
+                case "escena6":
+                    requestAnimationFrame(mostrarResultadosFinales);
+                    break;
+            }
         });
     }
 }
 
-//  Listener global, solo una vez
-document.getElementById("btnSiguienteCombate").addEventListener("click", siguienteCombate);
+// Listener del botón de siguiente combate, solo si existe
+const btnSiguiente = document.getElementById("btnSiguienteCombate");
+if (btnSiguiente) {
+    btnSiguiente.addEventListener("click", siguienteCombate);
+}
