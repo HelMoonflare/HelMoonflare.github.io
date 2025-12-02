@@ -20,12 +20,6 @@ export function cambiarEscena(idEscenaActual, idEscenaSiguiente) {
         escenaSiguiente.style.display = 'block';
     }
 
-    // Controlar navbar según la escena
-    if (escenaSiguiente === "escena5") {
-        document.body.classList.add("escena5");
-    } else {
-        document.body.classList.remove("escena5");
-    }
 }
 
 for (const e of escenas) {
@@ -47,13 +41,7 @@ for (const e of escenas) {
             // Escena 4 a 5 (primer combate)
             if (e.actual === "escena4" && e.siguiente === "escena5") {
                 cambiarEscena(e.actual, e.siguiente); // primero mostrar la escena
-
-                // ocultar la navbar
-                const navbar = document.querySelector("header");
-                if (navbar) navbar.style.display = "none";
-
                 iniciarCombate(); // luego iniciar combate
-                return;
             }
 
 

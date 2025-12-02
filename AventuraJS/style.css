@@ -5,6 +5,7 @@
 
 body {
   background: rgb(43, 43, 43);
+  overflow: hidden;
 }
 
 button {
@@ -210,10 +211,4 @@ button {
 #contenedor-combate img {
   width: 150px;
   height: auto;
-}
-
-/* Ocultar la navbar durante los combates */
-#escena5:has(.combatiente)~#navbar,
-body.escena5 #navbar {
-  display: none;
 }
