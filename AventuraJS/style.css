@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(43, 43, 43);
+}
+
+button {
+  cursor: pointer;
+}
+
+#escena1 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: stretch;
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 8px;
+  width: 50vh;
+  background: #2ecc71;
+}
+
+
+
+#escena1:hover {
+  transition: box-shadow .2s ease, transform .2s
+}
+
+#escena1>button:hover {
+  transition: transform .15s, box-shadow .15s
+}
+
+
+/* ─────────────────────────────
+   GRID DE PRODUCTOS
+────────────────────────────── */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ─────────────────────────────
+  TARJETA DE PRODUCTO
+────────────────────────────── */
+.tarjeta-producto {
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  transition: transform .3s ease, background .3s ease;
+}
+
+.tarjeta-producto:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta-producto.seleccionado {
+  background: #c7f9cc;
+}
+
+.btn-agregar,
+.btn-retirar {
+  margin-top: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.btn-retirar {
+  background: #ffdddd;
+}
+
+
+/* Botón de añadir/quitar */
+.btn-agregar {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #0077ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .25s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #005ec4;
+}
+
+/* Cuando el producto está añadido a la cesta */
+.seleccionado {
+  background-color: #d9ffe0 !important;
+  border: 2px solid #2ecc71;
+}
+
+
+/* Nombre del producto */
+.tarjeta-producto h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Botón */
+.tarjeta-producto button {
+  margin-top: 0.8rem;
+  padding: 8px 14px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.tarjeta-producto button:hover {
+  background-color: #1c618b;
+}
+
+/* Cesta de productos */
+.cesta-productos {
+  border: 2px #aaa;
+  min-height: 100px;
+  border-radius: 10px;
+  background-color: #2ecc71;
+  margin: 5%;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+}
+
+.producto {
+  background: #1c618b;
+  width: 100px;
+  height: 100px;
+}
+
+/* ─────────────────────────────
+  ENEMIGOS
+────────────────────────────── */
+.grid-enemigos {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 20px;
+}
+
+.tarjeta-enemigo {
+  background: #282828;
+  border: 2px solid #555;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+.tarjeta-enemigo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+/* ─────────────────────────────
+  ANIMACIONES COMBATE
+────────────────────────────── */
+#contenedor-combate {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.combatiente {
+  position: absolute;
+  bottom: 0;
+  transition: transform 1s ease-out;
+}
+
+.fuera-izquierda {
+  transform: translateX(-250%);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.fuera-derecha {
+  transform: translateX(250%);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.en-posicion {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#jugador-combate {
+  left: 10%;
+}
+
+#enemigo-combate {
+  right: 10%;
+}
+
+#contenedor-combate img {
+  width: 150px;
+  height: auto;
+}
+
+/* Ocultar la navbar durante los combates */
+#escena5:has(.combatiente)~#navbar,
+body.escena5 #navbar {
+  display: none;
+}

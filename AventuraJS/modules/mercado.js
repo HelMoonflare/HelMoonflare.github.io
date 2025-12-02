@@ -1,0 +1,36 @@
+import { Producto } from "../constants/Producto.js";
+
+function filtrarPorRareza(rareza) {
+    let filtrados = productos.filter(producto => producto.rareza === rareza);
+    return filtrados;
+}
+
+
+function buscarProducto(nombre) {
+    let encontrado = productos.find(producto => producto.nombre === nombre);
+    if (encontrado) {
+        return encontrado;
+    } else {
+        return null;
+    }
+}
+
+
+function aplicarDescuentoARareza(rareza, descuento = 0.2) {
+    const filtrados = filtrarPorRareza(rareza);
+    const productosConDescuento = [];
+
+    for (let producto of filtrados) {
+        const clon = producto.aplicarDescuento(descuento)
+        productosConDescuento.push(clon);
+    }
+    return productosConDescuento;
+}
+
+export const productos = [
+    new Producto("Espada de madera", "/imgs/espada.jpg", 100, "comun", "arma", 5),
+    new Producto("Armadura de placas", "/imgs/armadura.jpg", 250, "rara", "armadura", 15),
+    new Producto("Poción de vitalidad", "/imgs/pocion.jpg", 50, "comun", "consumible", 10)
+];
+
+export { filtrarPorRareza, buscarProducto, aplicarDescuentoARareza };
