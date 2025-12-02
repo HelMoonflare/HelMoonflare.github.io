@@ -28,6 +28,10 @@ for (const e of escenas) {
 
     if (boton) {
         boton.addEventListener("click", () => {
+            // Escena 1
+            if (e.siguiente === "escena1") {
+                mostrarTarjetaJugador();
+            }
 
             // Escena 2 a 3
             if (e.actual === "escena2") {
@@ -46,6 +50,7 @@ for (const e of escenas) {
                 iniciarCombate(); // luego iniciar combate
             }
 
+            // Escena 5 a 6
             if (e.actual === "escena5" && e.siguiente === "escena6") {
                 requestAnimationFrame(() => {
                     mostrarResultadosFinales();
