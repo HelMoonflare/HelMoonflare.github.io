@@ -12,6 +12,9 @@ button {
   cursor: pointer;
 }
 
+/* ─────────────────────────────
+  ESCENA 1: INICIO
+────────────────────────────── */
 /* Escena completa */
 #escena1 {
   display: flex;
@@ -42,7 +45,7 @@ button {
 
 
 /* ─────────────────────────────
-   GRID DE PRODUCTOS
+  ESCENA 2: MERCADO
 ────────────────────────────── */
 .grid-productos {
   display: grid;
@@ -51,9 +54,41 @@ button {
   padding: 20px;
 }
 
-/* ─────────────────────────────
-  TARJETA DE PRODUCTO
-────────────────────────────── */
+.imagen-producto-mercado {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.imagen-producto-cesta {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .grid-productos .cesta-productos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-productos .cesta-productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-productos .cesta-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tarjeta de producto */
 .tarjeta-producto {
   padding: 15px;
   background: #fafafa;
@@ -78,13 +113,13 @@ button {
   transition: background .3s ease;
 }
 
-.btn-retirar {
+/* .btn-retirar {
   background: #ffdddd;
-}
+} */
 
 
 /* Botón de añadir/quitar */
-.btn-agregar {
+/* .btn-agregar {
   margin-top: 10px;
   padding: 8px 12px;
   border: none;
@@ -93,7 +128,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: background .25s ease;
-}
+} */
 
 .btn-agregar:hover {
   background-color: #005ec4;
@@ -147,7 +182,7 @@ button {
 }
 
 /* ─────────────────────────────
-  ENEMIGOS
+  ESCENA 3: ENEMIGOS
 ────────────────────────────── */
 .grid-enemigos {
   display: grid;
@@ -174,7 +209,7 @@ button {
 
 
 /* ─────────────────────────────
-  ANIMACIONES COMBATE
+  ESCENA 4: COMBATE
 ────────────────────────────── */
 #contenedor-combate {
   position: relative;
@@ -219,7 +254,7 @@ button {
 }
 
 /* ─────────────────────────────
-  ANIMACIONES RANKING
+  ESCENA 5: RANKING
 ────────────────────────────── */
 #resultadoFinal {
   display: flex;
