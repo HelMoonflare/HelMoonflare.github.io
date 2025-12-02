@@ -1,6 +1,8 @@
 import { actualizarStats } from "./actualizarStats.js";
 import { cargarEnemigos } from "./cargarEnemigos.js";
 import { iniciarCombate, siguienteCombate } from "./cargarCombates.js";
+import { mostrarResultadosFinales } from "./animacionResultados.js";
+
 
 const escenas = [
     { actual: "escena1", siguiente: "escena2", boton: "btnEscena1" },
@@ -44,6 +46,11 @@ for (const e of escenas) {
                 iniciarCombate(); // luego iniciar combate
             }
 
+            if (e.actual === "escena5" && e.siguiente === "escena6") {
+                requestAnimationFrame(() => {
+                    mostrarResultadosFinales();
+                });
+            }
 
             cambiarEscena(e.actual, e.siguiente);
         });
@@ -52,4 +59,3 @@ for (const e of escenas) {
 
 //  Listener global, solo una vez
 document.getElementById("btnSiguienteCombate").addEventListener("click", siguienteCombate);
-

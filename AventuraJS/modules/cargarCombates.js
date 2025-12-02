@@ -1,6 +1,7 @@
 import { enemigos } from "./cargarEnemigos.js";
 import { jugador } from "./datosJugador.js";
 import { combate } from "./batalla.js";
+import { cambiarEscena } from "./cambiarEscena.js";
 
 let indiceCombate = 0;
 
@@ -45,7 +46,10 @@ export function mostrarCombate() {
 
     // Ejecutar el combate instantáneo
     const resultado = combate(jugador, enemigo);
-    console.log(`Ganador: ${resultado.ganador.nombre}, Puntos: ${resultado.puntosObtenidos}`);
+    if (resultado.ganador === jugador) {
+        jugador.actualizarPuntos(resultado.puntosObtenidos);
+    }
+
 }
 
 // Iniciar los combates desde el primero
