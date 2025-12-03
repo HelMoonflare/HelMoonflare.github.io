@@ -17,7 +17,8 @@ button {
   cursor: pointer;
 }
 
-.btn-continuar {
+.btn-continuar,
+#btnSiguienteCombate {
   display: block;
   margin: 20px auto 40px auto;
   padding: 12px 24px;
@@ -235,9 +236,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
   position: relative;
-  /* o simplemente eliminar esta línea */
   z-index: 1;
-  /* puede quedarse así */
 }
 
 
@@ -322,6 +321,30 @@ button {
   height: 300px;
 }
 
+#jugador-combate {
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+#enemigo-combate {
+  right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+#stats-jugador-combate,
+#stats-enemigo-combate {
+  background: #2ecc71;
+  color: rgb(43, 43, 43);
+  padding: 10px;
+  border-radius: 8px;
+}
+
 .combatiente {
   position: absolute;
   bottom: 0;
@@ -357,6 +380,7 @@ button {
   width: 150px;
   height: auto;
 }
+
 
 /* ─────────────────────────────
   ESCENA 6: RANKING
