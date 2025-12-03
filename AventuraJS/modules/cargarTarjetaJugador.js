@@ -11,7 +11,7 @@ export function cargarTarjetaJugador() {
 
     tarjeta.innerHTML = `
         <img src="${jugador.avatar}" alt="Avatar del jugador">
-        <h2>Jugador: ${jugador.nombre}</h2>
+        <h2>${jugador.nombre}</h2>
         <p>Puntos: ${jugador.puntos}</p>
         <p>Ataque: ${jugador.atqTotal()}</p>
         <p>Defensa: ${jugador.defTotal()}</p>

@@ -48,10 +48,13 @@
       <!-- Escena 3: Estado actualizado -->
       <div id="escena3" style="display: none;">
         <h2>Estado del Jugador</h2>
-        <p id="ataque-jugador">Ataque: <span id="stat-ataque">0</span></p>
-        <p id="defensa-jugador">Defensa: <span id="stat-defensa">0</span></p>
-        <p id="vida-jugador">Vida: <span id="stat-vida">0</span></p>
-
+        <div id="tarjeta-jugador">
+          <p id="ataque-jugador">Ataque: <span id="stat-ataque">0</span></p>
+          <p id="defensa-jugador">Defensa: <span id="stat-defensa">0</span></p>
+          <p id="vida-jugador">Vida: <span id="stat-vida">0</span></p>
+        </div>
+        
+        <div id="inventario"></div>
         <button id="btnEscena3" class="btn-continuar">Continuar</button>
       </div>
       <script type="module" src="./modules/actualizarStats.js" defer></script>

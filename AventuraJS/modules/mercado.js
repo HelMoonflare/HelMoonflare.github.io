@@ -28,20 +28,14 @@ function aplicarDescuentoARareza(rareza, descuento = 0.2) {
 }
 
 export const productos = [
-    new Producto("Espada de Angmar", "images/espada.png", 200, "rara", "arma", 10),
+    new Producto("Espada de Angmar", "images/espada.png", 200, "muy rara", "arma", 10),
     new Producto("Armadura Negra", "images/armadura.png", 250, "muy rara", "armadura", 15),
-    new Producto("Arco", "images/arco.png", 200, "rara", "rara", 5),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-        new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
-    new Producto("Poción de vitalidad", "images/pocion.jpg", 50, "comun", "consumible", 10),
+    new Producto("Arco Élfico", "images/arco.jpg", 100, "rara", "rara", 5),
+    new Producto("Poción de vitalidad", "images/pocion.png", 50, "comun", "consumible", 10),
+    new Producto("Poción de vitalidad", "images/pocion.png", 50, "comun", "consumible", 10),
+    new Producto("Poción de vitalidad", "images/pocion.png", 50, "comun", "consumible", 10),
+    new Producto("Poción de vitalidad", "images/pocion.png", 50, "comun", "consumible", 10),
+    new Producto("Poción de vitalidad", "images/pocion.png", 50, "comun", "consumible", 10)
 
 ];
 

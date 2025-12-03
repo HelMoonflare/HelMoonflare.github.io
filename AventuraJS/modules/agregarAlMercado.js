@@ -17,7 +17,7 @@ for (const producto of productos) {
     nombre.textContent = producto.nombre;
 
     const precio = document.createElement("p");
-    precio.textContent = producto.precio + " monedas";
+    precio.textContent = producto.precio + " mírians";
 
     const bonus = document.createElement("p");
     bonus.textContent = "Bonus: +" + producto.bonus;

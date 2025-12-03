@@ -17,7 +17,7 @@ export function mostrarResultadosFinales() {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("tarjeta-resultado");
     tarjeta.innerHTML = `
-        <h2 class="titulo-final">¡Resultados finales!</h2>
+        <h2 class="titulo-final">Resultados finales</h2>
         <p class="rango-final">Rango obtenido: <strong>${rango}</strong></p>
         <p class="puntos-finales">Puntos totales: <strong>${jugador.puntos}</strong></p>
     `;
@@ -36,7 +36,7 @@ export function mostrarResultadosFinales() {
 
 // Efecto de confetti (solo en escena 6)
 function lanzarConfetti() {
-    const duration = 2 * 1000;  // 2 segundos
+    const duration = 1000;  // 1 segundo (1000 milisegundos)
     const end = Date.now() + duration;
 
     (function frame() {
