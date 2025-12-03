@@ -47,19 +47,35 @@ button {
 /* ─────────────────────────────
   ESCENA 2: MERCADO
 ────────────────────────────── */
+#escena2 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Toda la pantalla */
+}
+
+/* Título */
+#escena2 h2 {
+  text-align: center;
+  padding: 10px 0;
+}
+
 .mercado {
-  position: relative;
-  height: 100vh;
-  overflow-y: auto;
-  padding-top: 130px;
+  height: 344px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 
 .grid-productos {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  padding-bottom: 140px; /* espacio para no meterse debajo de la cesta */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
-  padding: 20px;
 }
 
 
@@ -177,7 +193,6 @@ button {
 
 }
 
-
 .producto {
   background: #1c618b;
   width: 100px;
@@ -188,6 +203,11 @@ button {
 
 .producto:hover {
   transform: scale(1.05);
+}
+
+#btnEscena2 {
+  margin-top: 20px;
+  align-self: center;
 }
 
 /* ─────────────────────────────
