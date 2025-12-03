@@ -27,7 +27,6 @@ export class Jugador {
         }
     }
 
-
     actualizarPuntos(puntos) {
         this.puntos += puntos;
     }

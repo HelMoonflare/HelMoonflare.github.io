@@ -8,6 +8,11 @@ for (const producto of productos) {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("tarjeta-producto");
 
+    const img = document.createElement("img");
+    img.src = producto.imagen;
+    img.alt = producto.nombre;
+    img.classList.add("imagen-producto-mercado");
+
     const nombre = document.createElement("p");
     nombre.textContent = producto.nombre;
 
@@ -21,7 +26,7 @@ for (const producto of productos) {
     agregar.textContent = "Añadir";
     agregar.classList.add("btn-agregar");
 
-    tarjeta.append(nombre, precio, bonus, agregar);
+    tarjeta.append(img, nombre, precio, bonus, agregar);
     grid.appendChild(tarjeta);
 
     agregar.addEventListener("click", () => {
@@ -29,24 +34,26 @@ for (const producto of productos) {
             // Añadir al inventario
             jugador.agregarObjeto(producto);
 
-            // Crear tarjeta en la cesta
+            // Crear tarjeta para la cesta
             const tarjetaCesta = document.createElement("div");
             tarjetaCesta.classList.add("producto");
             tarjetaCesta.dataset.nombre = producto.nombre;
 
-            const nombreCesta = document.createElement("p");
-            nombreCesta.textContent = producto.nombre;
+            // Imagen del producto
+            const imgCesta = document.createElement("img");
+            imgCesta.src = producto.imagen;
+            imgCesta.alt = producto.nombre;
+            imgCesta.classList.add("imagen-producto-cesta");
 
-            const bonusCesta = document.createElement("p");
-            bonusCesta.textContent = "Bonus: +" + producto.bonus;
+            tarjetaCesta.appendChild(imgCesta);
 
-            tarjetaCesta.append(nombreCesta, bonusCesta);
             cesta.appendChild(tarjetaCesta);
 
-            // Cambiar estilo del botón y tarjeta
+            // Cambiar estilo del botón
             tarjeta.classList.add("seleccionado");
             agregar.textContent = "Retirar";
             agregar.classList.add("btn-retirar");
+
         } else {
             // Retirar del inventario
             jugador.eliminarObjeto(producto);
@@ -57,10 +64,11 @@ for (const producto of productos) {
                 cesta.removeChild(tarjetaEnCesta);
             }
 
-            // Restaurar estilo del botón y tarjeta
+            // Restaurar estilo
             tarjeta.classList.remove("seleccionado");
             agregar.textContent = "Añadir";
             agregar.classList.remove("btn-retirar");
         }
     });
+
 }

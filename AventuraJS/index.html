@@ -5,7 +5,9 @@
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <link rel='stylesheet' href='style.css'>
+  <link src="./images/">
   <!-- <script src="./constants/" defer></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script type="module" src="./modules/cambiarEscena.js" defer></script>
   <title>Aventura JS</title>
 </head>
@@ -18,11 +20,10 @@
     <div id="juego">
       <!-- Escena 1: Estado inicial del jugador -->
       <div id="escena1">
-        <h2>Jugador: [Nombre]</h2>
-        <img src="[Avatar]" alt="Avatar del jugador">
-        <p>Puntos: [0]</p>
+        <div id="tarjeta-jugador"></div>
         <button id="btnEscena1">Continuar</button>
       </div>
+
 
       <!-- Escena 2: Mercado -->
       <div id="escena2" style="display: none;">
@@ -78,17 +79,17 @@
         </div>
 
         <button id="btnSiguienteCombate">Siguiente</button>
-        <button id="btnEscena5">Continuar</button>
+        <button id="btnEscena5" style="display: none;">Continuar</button>
       </div>
 
       <!-- Escena 6: Resultado final -->
       <div id="escena6" style="display: none;">
-        <h2>Resultado Final</h2>
-        <p>Puntos finales: [0]</p>
-        <p>Rango: [Novato/Veterano]</p>
-        <button id="btnReiniciar">Reiniciar</button>
+        <div id="final-container" class="animacion-final">
+          <h1 id="titulo-final"></h1>
+          <p id="puntos-final"></p>
+        </div>
       </div>
-    </div>
+
 
   </main>
 </body>

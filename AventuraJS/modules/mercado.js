@@ -28,8 +28,8 @@ function aplicarDescuentoARareza(rareza, descuento = 0.2) {
 }
 
 export const productos = [
-    new Producto("Espada de madera", "/imgs/espada.jpg", 100, "comun", "arma", 5),
-    new Producto("Armadura de placas", "/imgs/armadura.jpg", 250, "rara", "armadura", 15),
+    new Producto("Espada de Angmar", "images/espada.png", 100, "comun", "arma", 5),
+    new Producto("Armadura Negra", "images/armadura.png", 250, "rara", "armadura", 15),
     new Producto("Poción de vitalidad", "/imgs/pocion.jpg", 50, "comun", "consumible", 10)
 ];
 

@@ -1,22 +1,41 @@
 import { enemigos } from "./cargarEnemigos.js";
-import { jugador } from "./datosJugador.js";  // el jugador que tenemos desde el mercado
+import { jugador } from "./datosJugador.js";
 import { combate } from "./batalla.js";
+import { cambiarEscena } from "./cambiarEscena.js";
 
 let indiceCombate = 0;
 
+// Referencias a los botones
+const btnSiguiente = document.getElementById("btnSiguienteCombate");
+const btnContinuar = document.getElementById("btnEscena5");
+
 // Mostrar combate actual
 export function mostrarCombate() {
-    if (indiceCombate >= enemigos.length) return;
+
+    // Mostrar "Siguiente", ocultar "Continuar"
+    btnSiguiente.style.display = "block";
+    btnContinuar.style.display = "none";
+
+    if (indiceCombate >= enemigos.length) {
+        console.log("Todos los combates finalizados");
+        return;
+    }
 
     const enemigo = enemigos[indiceCombate];
+
     const contJugador = document.getElementById("jugador-combate");
     const contEnemigo = document.getElementById("enemigo-combate");
 
-    // 1. Resetear clases de animación
+    // Resetear animaciones
     contJugador.classList.remove("en-posicion");
     contEnemigo.classList.remove("en-posicion");
 
-    // 2. Actualizar imágenes y stats
+    setTimeout(() => {
+        contJugador.classList.add("en-posicion");
+        contEnemigo.classList.add("en-posicion");
+    }, 550);
+
+    // Actualizar imágenes y stats
     document.getElementById("img-jugador-combate").src = jugador.avatar;
     document.getElementById("stats-jugador-combate").textContent =
         `ATQ: ${jugador.atqTotal()} | DEF: ${jugador.defTotal()} | VIDA: ${jugador.vidaTotal()}`;
@@ -25,21 +44,13 @@ export function mostrarCombate() {
     document.getElementById("stats-enemigo-combate").textContent =
         `ATQ: ${enemigo.ataque} | VIDA: ${enemigo.vida}`;
 
-    // 3. Forzar reflow
-    contJugador.offsetWidth;
-    contEnemigo.offsetWidth;
-
-    // 4. Activar animación después de un pequeño delay
-    setTimeout(() => {
-        contJugador.classList.add("en-posicion");
-        contEnemigo.classList.add("en-posicion");
-    }, 500);
-
-    // Ejecutar el combate instantáneamente
+    // Ejecutar el combate instantáneo
     const resultado = combate(jugador, enemigo);
-    console.log(`Combate contra ${enemigo.nombre}: Ganador: ${resultado.ganador.nombre}, Puntos: ${resultado.puntosObtenidos}`);
-}
+    if (resultado.ganador === jugador) {
+        jugador.actualizarPuntos(resultado.puntosObtenidos);
+    }
 
+}
 
 // Iniciar los combates desde el primero
 export function iniciarCombate() {
@@ -50,16 +61,23 @@ export function iniciarCombate() {
 // Pasar al siguiente combate
 export function siguienteCombate() {
     indiceCombate++;
+
     if (indiceCombate < enemigos.length) {
         mostrarCombate();
+
     } else {
-        console.log("¡Todos los combates han terminado!");
-        // Aquí podrías activar el botón de continuar a la escena 6
+        // Ocultar "Siguiente" y mostrar "Continuar"
+        btnSiguiente.style.display = "none";
+        btnContinuar.style.display = "block";
     }
 }
 
-// Configurar el listener del botón una sola vez
-const btnSiguiente = document.getElementById("btnSiguienteCombate");
+// Listener del botón de siguiente
 if (btnSiguiente) {
     btnSiguiente.addEventListener("click", siguienteCombate);
 }
+
+// Listener del botón de continuar
+btnContinuar.addEventListener("click", () => {
+    cambiarEscena("escena6");
+});

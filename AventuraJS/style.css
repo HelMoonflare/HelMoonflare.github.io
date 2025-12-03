@@ -12,20 +12,28 @@ button {
   cursor: pointer;
 }
 
+/* ─────────────────────────────
+  ESCENA 1: INICIO
+────────────────────────────── */
+/* Escena completa */
 #escena1 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: space-around;
-  align-items: stretch;
-  border: 2px solid;
-  border-radius: 8px;
-  padding: 8px;
-  width: 50vh;
-  background: #2ecc71;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }
 
-
+/* Tarjeta del jugador */
+.tarjeta-jugador {
+  background-color: #2ecc71;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+}
 
 #escena1:hover {
   transition: box-shadow .2s ease, transform .2s
@@ -37,7 +45,7 @@ button {
 
 
 /* ─────────────────────────────
-   GRID DE PRODUCTOS
+  ESCENA 2: MERCADO
 ────────────────────────────── */
 .grid-productos {
   display: grid;
@@ -46,9 +54,41 @@ button {
   padding: 20px;
 }
 
-/* ─────────────────────────────
-  TARJETA DE PRODUCTO
-────────────────────────────── */
+.imagen-producto-mercado {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.imagen-producto-cesta {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .grid-productos .cesta-productos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-productos .cesta-productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-productos .cesta-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tarjeta de producto */
 .tarjeta-producto {
   padding: 15px;
   background: #fafafa;
@@ -73,13 +113,13 @@ button {
   transition: background .3s ease;
 }
 
-.btn-retirar {
+/* .btn-retirar {
   background: #ffdddd;
-}
+} */
 
 
 /* Botón de añadir/quitar */
-.btn-agregar {
+/* .btn-agregar {
   margin-top: 10px;
   padding: 8px 12px;
   border: none;
@@ -88,7 +128,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: background .25s ease;
-}
+} */
 
 .btn-agregar:hover {
   background-color: #005ec4;
@@ -142,7 +182,7 @@ button {
 }
 
 /* ─────────────────────────────
-  ENEMIGOS
+  ESCENA 3: ENEMIGOS
 ────────────────────────────── */
 .grid-enemigos {
   display: grid;
@@ -169,7 +209,7 @@ button {
 
 
 /* ─────────────────────────────
-  ANIMACIONES COMBATE
+  ESCENA 4: COMBATE
 ────────────────────────────── */
 #contenedor-combate {
   position: relative;
@@ -211,4 +251,41 @@ button {
 #contenedor-combate img {
   width: 150px;
   height: auto;
+}
+
+/* ─────────────────────────────
+  ESCENA 5: RANKING
+────────────────────────────── */
+#resultadoFinal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tarjeta-resultado {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+.tarjeta-resultado.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.titulo-final {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.rango-final,
+.puntos-finales {
+  font-size: 1.3rem;
 }
