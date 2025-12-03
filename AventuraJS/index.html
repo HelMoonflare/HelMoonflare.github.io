@@ -21,7 +21,7 @@
       <!-- Escena 1: Estado inicial del jugador -->
       <div id="escena1">
         <div id="tarjeta-jugador"></div>
-        <button id="btnEscena1">Continuar</button>
+        <button id="btnEscena1" class="btn-continuar">Continuar</button>
       </div>
 
 
@@ -29,16 +29,18 @@
       <div id="escena2" style="display: none;">
         <h2>Mercado de Productos</h2>
         <div class="mercado" id="mercado">
-
+          
           <div class="grid-productos" id="grid-productos">
             <!-- Aquí irán los productos del mercado -->
             
           </div>
+          
           <div class="cesta-productos" id="cesta-productos">
-            
+  
           </div>
         </div>
-        <button id="btnEscena2">Continuar</button>
+
+        <button id="btnEscena2" class="btn-continuar">Continuar</button>
       </div>
       <script type="module" src="./modules/agregarAlMercado.js" defer></script>
 
@@ -50,7 +52,7 @@
         <p id="defensa-jugador">Defensa: <span id="stat-defensa">0</span></p>
         <p id="vida-jugador">Vida: <span id="stat-vida">0</span></p>
 
-        <button id="btnEscena3">Continuar</button>
+        <button id="btnEscena3" class="btn-continuar">Continuar</button>
       </div>
       <script type="module" src="./modules/actualizarStats.js" defer></script>
 
@@ -60,7 +62,7 @@
         <div id="grid-enemigos">
           <!-- Tarjetas de enemigos -->
         </div>
-        <button id="btnEscena4">Continuar</button>
+        <button id="btnEscena4" class="btn-continuar">Continuar</button>
       </div>
 
       <!-- Escena 5: Batallas -->
@@ -82,7 +84,7 @@
         </div>
 
         <button id="btnSiguienteCombate">Siguiente</button>
-        <button id="btnEscena5" style="display: none;">Continuar</button>
+        <button id="btnEscena5" class="btn-continuar" style="display: none;">Continuar</button>
       </div>
 
       <!-- Escena 6: Resultado final -->
