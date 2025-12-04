@@ -6,7 +6,7 @@ const cesta = document.querySelector(".cesta-productos");
 
 const contenedorDinero = document.createElement("div");
 const dinero = document.createElement("h2");
-dinero.textContent = "Dinero: " + jugador.dinero;
+dinero.textContent = "Dinero: " + jugador.dinero + " monedas";
 
 contenedorDinero.append(dinero);
 
@@ -36,8 +36,8 @@ for (const producto of productos) {
     grid.appendChild(tarjeta);
 
     agregar.addEventListener("click", () => {
-        if (jugador.dinero <= 0) {
-            alert('¡No tienes monedas suficientes!')
+        if (jugador.dinero <= 0 || producto.precio > jugador.dinero) {
+            alert('¡No tienes monedas suficientes!');
         } else {
             if (!tarjeta.classList.contains("seleccionado")) {
                 // Añadir al inventario
