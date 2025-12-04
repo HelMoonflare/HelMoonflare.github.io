@@ -7,6 +7,7 @@ export const jugador = new Jugador(
     10,     // ataque base
     5,      // defensa base
     100,     // vida base
+    500,    // dinero inicial
     0,      // puntos iniciales
     []    // inventario inicial
 );

@@ -23,10 +23,13 @@ export function combate(jugador, enemigo) {
 
     if (vidaActualEnemigo <= 0) {
         ganador = jugador;
-        puntosObtenidos = 100 + enemigo.ataque;
+        jugador.dinero += 5;
+        puntosObtenidos = 100 + enemigo.ataque + jugador.dinero;
+
 
         if (enemigo instanceof Jefe) {
-            puntosObtenidos *= enemigo.multiplicador;
+            jugador.dinero += 10
+            puntosObtenidos = puntosObtenidos * enemigo.multiplicador + jugador.dinero;
         }
 
     } else if (vidaActualJugador <= 0) {

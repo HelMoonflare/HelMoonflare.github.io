@@ -1,11 +1,12 @@
 import { Producto } from "./Producto.js";
 
 export class Jugador {
-    constructor(nombre, avatar, ataque, defensa, vida, puntos = 0, inventario = []) {
+    constructor(nombre, avatar, ataque, defensa, vida, dinero, puntos = 0, inventario = []) {
         this.nombre = nombre;
         this.avatar = avatar;
         this.puntos = puntos;
         this.inventario = inventario;
+        this.dinero = dinero;
         this.ataque = ataque;
         this.defensa = defensa;
         this.vida = vida;

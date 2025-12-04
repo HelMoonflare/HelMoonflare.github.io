@@ -18,6 +18,54 @@
   </header>
   <main>
     <div id="juego">
+      <!-- Escena 0: formulario -->
+      <!-- <div id="escena0">
+        <form action="">
+          <label for="nombre">Nombre:</label>
+          <input type="text" required>
+          <br>
+          <label for="ataque">Ataque:</label>
+          <input type="number" value="0">
+          <br>
+          <label for="defensa">Defensa:</label>
+          <input type="number" value="0">
+          <br>
+          <label for="vida">Vida:</label>
+          <input type="number" value="100">
+        </form>
+        <button id="btnEscena0">Comenzar</button>
+      </div>
+      <script>
+        const regExpNombre = /^[a-zA-Z]{1,20}$/;
+        
+        const nombre = document.getElementById("nombre");
+        const atq = document.getElementById("ataque");
+        const def = document.getElementById("defensa");
+        const vida = document.getElementById("vida");
+
+        const cantidadTotal = atq.value + def.value + vida.value;
+
+        if (cantidadTotal > 110) {
+          alert('La suma de las tres estadísticas no puede ser mayor a 110')
+          cantidadTotal = 100
+        }
+
+        if (atq.value < 0 || atq.value > 10) {
+          alert('El ataque sólo puede tener valores entre 0 y 10')
+          atq.value = 0
+        }
+
+        if (def.value < 0 || def.value > 10) {
+
+        }
+
+        if (vida.value < 100 || vida.value > 110) {
+          alert('La vida total no puede superar los 110 puntos')
+          vida.value = 100
+        }
+
+      </script> -->
+
       <!-- Escena 1: Estado inicial del jugador -->
       <div id="escena1">
         <div id="tarjeta-jugador"></div>
