@@ -136,8 +136,36 @@
           <h1 id="titulo-final"></h1>
           <p id="puntos-final"></p>
         </div>
+        <button id="rankingPorConsola" onclick=resultadosPorConsola()>Resultados por consola</button>
       </div>
+      <script>
+        function resultadosPorConsola() {
+          console.log(getRegistro())
+        }
 
+        function getRegistro() {
+          const registroJSON = [
+            nombre = localStorage.getItem(jugador.nombre),
+            puntos = localStorage.getItem(jugador.puntos),
+            monedas = localStorage.getItem(jugador.monedas)
+          ]
+
+          try {
+            if(registroJSON) {
+              JSON.parse(registroJSON);
+              return registroJSON;
+            
+            } else {
+              return;
+            }
+
+          } catch (error) {
+            console.error('Error al parsear el registro', error);
+            return;
+          }
+
+        }
+      </script>
 
   </main>
 </body>
