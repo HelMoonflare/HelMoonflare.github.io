@@ -11,7 +11,8 @@ const escenas = [
     { actual: "escena3", siguiente: "escena4", boton: "btnEscena3" },
     { actual: "escena4", siguiente: "escena5", boton: "btnEscena4" },
     { actual: "escena5", siguiente: "escena6", boton: "btnEscena5" },
-    { actual: "escena6", siguiente: "escena1", boton: "btnReiniciar" }
+    { actual: "escena6", siguiente: "escena7", boton: "btnEscena6" }, 
+    { actual: "escena7", siguiente: "escena1", boton: "btnReiniciar"}
 ];
 
 export function cambiarEscena(idEscenaActual, idEscenaSiguiente) {

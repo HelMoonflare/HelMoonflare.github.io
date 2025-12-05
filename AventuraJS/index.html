@@ -22,21 +22,29 @@
       <div id="escena1">
         <div id="tarjeta-jugador"></div>
         <button id="btnEscena1" class="btn-continuar">Continuar</button>
+        <div id="monedero" class="monedero fuera-derecha">
+          <p>500</p>
+          <img src="images/monedero.png" alt="">
+        </div>
       </div>
+      <script>
+        const monedero = document.getElementById("monedero");
+        // monedero.classList.add("combatiente", "en-posicion");
+      </script>
 
 
       <!-- Escena 2: Mercado -->
       <div id="escena2" style="display: none;">
         <h2>Mercado de Productos</h2>
         <div class="mercado" id="mercado">
-          
+
           <div class="grid-productos" id="grid-productos">
             <!-- Aquí irán los productos del mercado -->
-            
+
           </div>
-          
+
           <div class="cesta-productos" id="cesta-productos">
-  
+
           </div>
         </div>
 
@@ -53,7 +61,7 @@
           <p id="defensa-jugador">Defensa: <span id="stat-defensa">0</span></p>
           <p id="vida-jugador">Vida: <span id="stat-vida">0</span></p>
         </div>
-        
+
         <div id="inventario"></div>
         <button id="btnEscena3" class="btn-continuar">Continuar</button>
       </div>
@@ -96,9 +104,33 @@
           <h1 id="titulo-final"></h1>
           <p id="puntos-final"></p>
         </div>
+        <button id="btnEscena6">Siguiente</button>
       </div>
 
+      <!-- Escena 7: tabla con resultados -->
+      <div id="escena7" style="display: none;">
+        <div id="tabla-resultados">
+          <div id="titulo">
+            <h2>Tabla con resultados</h2>
+          </div>
+          <div id="stats-finales">
 
+            <div id="nombre">
+              <h2>Nombre</h2>
+              <p>Talion</p>
+            </div>
+            <div id="puntos">
+              <h2>Puntos</h2>
+              <p>1488</p>
+            </div>
+            <div id="monedas">
+              <h2>Monedas</h2>
+              <p>749</p>
+            </div>
+          </div>
+        </div>
+        <button id="btnReiniciar">Reiniciar</button>
+      </div>
   </main>
 </body>
 

@@ -52,6 +52,24 @@ button {
   text-align: center;
 }
 
+.monedero {
+  position: absolute;
+  bottom: 0;
+  transition: transform 1s ease;
+}
+
+/* #monedero {
+  height: 100px;
+  left: 2%;
+  bottom: 1%;
+  transform: translateX(-250%);
+  transition: transform 1s ease;
+}
+
+#monedero img{
+  height: 100px;
+} */
+
 #escena1:hover {
   transition: box-shadow .2s ease, transform .2s
 }
@@ -347,7 +365,7 @@ button {
 
 .fuera-derecha {
   transform: translateX(250%);
-  opacity: 0;
+  /* opacity: 0; */
   transition: transform 1s ease, opacity 1s ease;
 }
 
@@ -405,4 +423,41 @@ button {
 .rango-final,
 .puntos-finales {
   font-size: 1.3rem;
+}
+
+/* ─────────────────────────────
+  ESCENA 7: TABLA RESULTADOS
+────────────────────────────── */
+#escena7 {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+#titulo {
+  display: flex;
+  justify-items: center;
+  background-color: #6009B0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  justify-content: space-between;
+}
+
+#tabla-resultados {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #2ecc71;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  justify-content: space-between;
+}
+
+#tabla-resultados div {
+  padding: 8px
 }
